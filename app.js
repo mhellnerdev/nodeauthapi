@@ -30,7 +30,7 @@ app.post('/api/login', (req, res) => {
     email: 'mhellnerdev@gmail.com',
   }
 
-  // sign-in
+  // sign the token with expiration
   jwt.sign({ user }, 'secretkey', { expiresIn: '30s' }, (err, token) => {
     res.json({
       token,
